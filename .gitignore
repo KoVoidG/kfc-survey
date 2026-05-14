@@ -1,0 +1,23 @@
+# ─── Personal Photos ───────────────────────────────────────────────────────────
+thiha*.png
+thiha*.jpg
+thiha*.jpeg
+thiha*.webp
+
+# ─── AI-Generated Images (Gemini) ─────────────────────────────────────────────
+Gemini_Generated_Image_*.png
+Gemini_Generated_Image_*.jpg
+Gemini_Generated_Image_*.jpeg
+Gemini_Generated_Image_*.webp
+
+# ─── OS / Editor Junk ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── VS Code ──────────────────────────────────────────────────────────────────
+.vscode/
+*.code-workspace
+
+# ─── Node (if ever used) ──────────────────────────────────────────────────────
+node_modules/

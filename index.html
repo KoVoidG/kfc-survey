@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KFC Siam Survey</title>
+  <link rel="icon" href="kfc.png" type="image/png" />
+  <link rel="shortcut icon" href="kfc.png" type="image/png" />
+  <meta name="description" content="Share your KFC Siam dining experience in this quick customer survey." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ── Header ────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <span class="badge">🍗 Customer Survey</span>
+      <h1>KFC Siam Customer<br>Behavior Survey</h1>
+      <p class="subtitle">Help us serve you better! Share your honest experience — it only takes 2 minutes.</p>
+      <div class="header-divider"></div>
+    </div>
+  </header>
+
+  <!-- ── Form ────────────────────────────────────────────────── -->
+  <main class="main-content">
+    <form id="survey-form" action="#" method="POST" novalidate>
+
+      <!-- ── Section 1: Personal Info ───────────────────────── -->
+      <section class="card" aria-labelledby="sec-personal">
+        <div class="card-header">
+          <span class="section-icon">👤</span>
+          <h2 id="sec-personal">Personal Information</h2>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Occupation</label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="radio" name="occupation" value="student" />
+              <span class="pill-face">🎓 Student</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="occupation" value="ta" />
+              <span class="pill-face">📚 TA</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="occupation" value="staff" />
+              <span class="pill-face">💼 Staff</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="occupation" value="others" />
+              <span class="pill-face">➕ Others</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Section 2: Faculty (shown only if Student) ──────── -->
+      <section class="card hidden" id="faculty-section" aria-labelledby="sec-faculty">
+        <div class="card-header">
+          <span class="section-icon">🏫</span>
+          <h2 id="sec-faculty">Faculty</h2>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Choose your faculty</label>
+          <div class="custom-dropdown" id="faculty-dropdown" tabindex="0">
+            <div class="dropdown-header">
+              <span class="dropdown-selected placeholder">— Select your faculty —</span>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-body">
+              <ul class="dropdown-list" id="faculty-list">
+                <li data-value="global_academy">Global Academy</li>
+                <li data-value="international_college">International College</li>
+                <li data-value="optometry">Faculty of Optometry</li>
+                <li data-value="dentistry">Faculty of Dentistry</li>
+                <li data-value="sca_music">SCA College of Music and Performing Arts</li>
+                <li data-value="medicine">Faculty of Medicine</li>
+                <li data-value="nursing">Faculty of Nursing</li>
+                <li data-value="pharmacy">Faculty of Pharmacy</li>
+                <li data-value="engineering">Faculty of Engineering</li>
+                <li data-value="it">Faculty of Information Technology</li>
+                <li data-value="science">Faculty of Science</li>
+                <li data-value="arts">Faculty of Arts</li>
+                <li data-value="communication_arts">Faculty of Communication Arts</li>
+                <li data-value="law">Faculty of Law</li>
+                <li data-value="business">Faculty of Business Administration</li>
+                <li data-value="political_science">Faculty of Political Science</li>
+                <li data-value="graduate_school">Graduate School, Master Degree–Doctoral Degree</li>
+              </ul>
+            </div>
+            <input type="hidden" name="major" id="faculty-input" value="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Section 3: Demographics ───────────────────────── -->
+      <section class="card" aria-labelledby="sec-demo">
+        <div class="card-header">
+          <span class="section-icon">📋</span>
+          <h2 id="sec-demo">Demographics</h2>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Age</label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="radio" name="age" value="under18" />
+              <span class="pill-face">Under 18</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="age" value="18-22" />
+              <span class="pill-face">18 – 22</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="age" value="23-27" />
+              <span class="pill-face">23 – 27</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="age" value="28-35" />
+              <span class="pill-face">28 – 35</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="age" value="above35" />
+              <span class="pill-face">Above 35</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Gender</label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="radio" name="gender" value="male" />
+              <span class="pill-face">♂ Male</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="gender" value="female" />
+              <span class="pill-face">♀ Female</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="gender" value="lgbtq" />
+              <span class="pill-face">🏳️‍🌈 LGBTQ+</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Nationality</label>
+          <div class="custom-dropdown" id="nationality-dropdown" tabindex="0">
+            <div class="dropdown-header">
+              <span class="dropdown-selected">Select your country...</span>
+              <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-body">
+              <div class="dropdown-search-wrapper">
+                <input type="text" class="dropdown-search" id="nationality-search" placeholder="Search country..." />
+              </div>
+              <ul class="dropdown-list" id="nationality-list">
+                <!-- Populated by JS -->
+              </ul>
+            </div>
+            <input type="hidden" name="nationality" id="nationality-input" value="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Section 4: Customer Behavior ──────────────────── -->
+      <section class="card" aria-labelledby="sec-behavior">
+        <div class="card-header">
+          <span class="section-icon">🍗</span>
+          <h2 id="sec-behavior">Customer Behavior</h2>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">How often do you visit KFC?</label>
+          <div class="slider-container" id="visit-freq-container">
+            <span class="slider-value-badge" id="visit-freq-display">Often</span>
+            <input type="range" name="visit_freq" id="visit-freq-slider" class="styled-slider dynamic-bg-slider" min="0"
+              max="4" step="1" value="2" />
+            <div class="slider-labels">
+              <span>Rarely</span>
+              <span>Sometimes</span>
+              <span>Often</span>
+              <span>Usually</span>
+              <span>Always</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Section 5: Visit Details ───────────────────────── -->
+      <section class="card" aria-labelledby="sec-visit">
+        <div class="card-header">
+          <span class="section-icon">🛒</span>
+          <h2 id="sec-visit">Visit Details</h2>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Which time period do you usually visit KFC?</label>
+          <div class="pill-grid">
+            <label class="pill-item">
+              <input type="radio" name="visit_time" value="breakfast" />
+              <span class="pill-face">🌅 Breakfast</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="visit_time" value="lunch" />
+              <span class="pill-face">☀️ Lunch</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="visit_time" value="dinner" />
+              <span class="pill-face">🌙 Dinner</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">How do you usually order?</label>
+          <div class="pill-grid">
+            <label class="pill-item">
+              <input type="radio" name="dine_type" value="dine_in" />
+              <span class="pill-face">🪑 Dine-in</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="dine_type" value="takeaway" />
+              <span class="pill-face">🛍️ Takeaway</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="dine_type" value="delivery" />
+              <span class="pill-face">🛵 Delivery</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Which order type do you prefer most?</label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="radio" name="order_type" value="individual" />
+              <span class="pill-face">🍽️ Individual Meal</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="order_type" value="promotion" />
+              <span class="pill-face">🎉 Promotion Items</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="order_type" value="group" />
+              <span class="pill-face">👨‍👩‍👧 Group</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="order_type" value="snack_sharing" />
+              <span class="pill-face">🤝 Snack Sharing</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Payment method</label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="radio" name="payment" value="cash" />
+              <span class="pill-face">💵 Cash</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="payment" value="promptpay" />
+              <span class="pill-face">📲 PromptPay</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="payment" value="card" />
+              <span class="pill-face">💳 Card</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="payment" value="true_money" />
+              <span class="pill-face">💰 True Money</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">How do you usually place your order?</label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="radio" name="order_method" value="counter" />
+              <span class="pill-face">🧑‍💼 Counter Cashier</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="order_method" value="kiosk" />
+              <span class="pill-face">🖥️ Self-order Kiosk</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="order_method" value="app" />
+              <span class="pill-face">📱 Mobile App</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">What is your maximum budget per visit at KFC?</label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="radio" name="budget" value="below100" />
+              <span class="pill-face">Below 100 THB</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="budget" value="100-199" />
+              <span class="pill-face">100 – 199 THB</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="budget" value="200-299" />
+              <span class="pill-face">200 – 299 THB</span>
+            </label>
+            <label class="pill-item">
+              <input type="radio" name="budget" value="300+" />
+              <span class="pill-face">300 THB and above</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Section 6: Menu Preferences ───────────────────── -->
+      <section class="card" aria-labelledby="sec-menu">
+        <div class="card-header">
+          <span class="section-icon">🍽️</span>
+          <h2 id="sec-menu">Menu Preferences</h2>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Which menu category do you purchase most often?</label>
+          <div class="menu-grid">
+            <label class="menu-card">
+              <input type="radio" name="menu_category" value="chicken" />
+              <div class="menu-card-inner">
+                <span class="check-badge">✓</span>
+                <span class="menu-emoji">🍗</span>
+                <span class="menu-name">Chicken</span>
+              </div>
+            </label>
+            <label class="menu-card">
+              <input type="radio" name="menu_category" value="rice_bowls" />
+              <div class="menu-card-inner">
+                <span class="check-badge">✓</span>
+                <span class="menu-emoji">🍚</span>
+                <span class="menu-name">Rice & Bowls</span>
+              </div>
+            </label>
+            <label class="menu-card">
+              <input type="radio" name="menu_category" value="snack_sweet" />
+              <div class="menu-card-inner">
+                <span class="check-badge">✓</span>
+                <span class="menu-emoji">🍰</span>
+                <span class="menu-name">Snack & Sweet</span>
+              </div>
+            </label>
+            <label class="menu-card">
+              <input type="radio" name="menu_category" value="burgers" />
+              <div class="menu-card-inner">
+                <span class="check-badge">✓</span>
+                <span class="menu-emoji">🍔</span>
+                <span class="menu-name">Burgers</span>
+              </div>
+            </label>
+            <label class="menu-card">
+              <input type="radio" name="menu_category" value="sides_drinks" />
+              <div class="menu-card-inner">
+                <span class="check-badge">✓</span>
+                <span class="menu-emoji">🥤</span>
+                <span class="menu-name">Sides &amp; Drinks</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Which add-on do you prefer most? <em>(select all that apply)</em></label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="mashed_potato" />
+              <span class="pill-face">🥔 Mashed Potato</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="coleslaw" />
+              <span class="pill-face">🥗 Coleslaw</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="tuna_corn_salad" />
+              <span class="pill-face">🌽 Tuna Corn Salad</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="egg_tart" />
+              <span class="pill-face">🥮 Egg Tart</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="french_fries" />
+              <span class="pill-face">🍟 French Fries</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="shrimp_donut" />
+              <span class="pill-face">🍩 Shrimp Donut</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="chick_n_roll" />
+              <span class="pill-face">🌯 Chick N' Roll</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="plain_rice" />
+              <span class="pill-face">🍚 Plain Rice</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="kentucky_rice" />
+              <span class="pill-face">🍛 Kentucky Rice</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="wingz_zabb" />
+              <span class="pill-face">🌶️ WingZ Zabb</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="addon" value="beverage" />
+              <span class="pill-face">🥤 Beverage</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Section 7: Promotions ───────────────────────────── -->
+      <section class="card" aria-labelledby="sec-promo">
+        <div class="card-header">
+          <span class="section-icon">🎉</span>
+          <h2 id="sec-promo">Promotions</h2>
+        </div>
+
+        <div class="form-group">
+          <label class="field-label">Which type of promotion do you prefer? <em>(select all that apply)</em></label>
+          <div class="pill-grid pill-grid--wrap">
+            <label class="pill-item">
+              <input type="checkbox" name="promotion" value="discounts" />
+              <span class="pill-face">🏷️ Discounts</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="promotion" value="buy1get1" />
+              <span class="pill-face">2️⃣ Buy 1 Get 1</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="promotion" value="coupons" />
+              <span class="pill-face">🎫 Coupons</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="promotion" value="app_rewards" />
+              <span class="pill-face">📱 App Rewards</span>
+            </label>
+            <label class="pill-item">
+              <input type="checkbox" name="promotion" value="other" />
+              <span class="pill-face">➕ Other</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Section 8: Ratings ──────────────────────────────── -->
+      <section class="card" aria-labelledby="sec-ratings">
+        <div class="card-header">
+          <span class="section-icon">⭐</span>
+          <h2 id="sec-ratings">Your Ratings</h2>
+        </div>
+
+        <p class="hint">1 – Poor &nbsp;·&nbsp; 2 – Fair &nbsp;·&nbsp; 3 – Good &nbsp;·&nbsp; 4 – Very Good &nbsp;·&nbsp;
+          5 – Excellent</p>
+
+        <!-- Flavor Quality -->
+        <div class="form-group rating-group">
+          <div class="rating-header">
+            <label class="field-label">How would you rate the flavor quality of the food?</label>
+            <span class="rating-display" id="display-flavor_quality">😎 4 - Very Good</span>
+          </div>
+          <div class="slider-container">
+            <input type="range" name="flavor_quality" class="styled-slider rating-slider dynamic-bg-slider" min="1"
+              max="5" step="1" value="4" />
+            <div class="slider-ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+          </div>
+        </div>
+
+        <!-- Overall Service Experience -->
+        <div class="form-group rating-group">
+          <div class="rating-header">
+            <label class="field-label">How would you rate your overall service experience?</label>
+            <span class="rating-display" id="display-service_rating">😎 4 - Very Good</span>
+          </div>
+          <div class="slider-container">
+            <input type="range" name="service_rating" class="styled-slider rating-slider dynamic-bg-slider" min="1"
+              max="5" step="1" value="4" />
+            <div class="slider-ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Submit ──────────────────────────────────────────── -->
+      <div class="submit-section">
+        <button type="submit" id="submit-btn">
+          <span>Submit Survey</span>
+          <span class="btn-icon">🍗</span>
+        </button>
+        <p class="submit-note">🔒 Your response is anonymous and helps us improve our services.</p>
+      </div>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2026 KFC Siam · Customer Experience Team</p>
+  </footer>
+
+  <script src="survey.js"></script>
+</body>
+
+</html>
