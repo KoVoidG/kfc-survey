@@ -1,7 +1,5 @@
 # 🍗 KFC Siam Customer Behavior Survey
 
-[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-survey.htunthihamyo.com-e4002b?style=for-the-badge)](https://survey.htunthihamyo.com/kfc/)
-
 A modern, responsive web-based survey form built to collect customer behavior and dining preference data from KFC Siam (Siam University) visitors. Designed as an academic research project by Global Academy students.
 
 > 🚀 **Final deployed version:** [https://survey.htunthihamyo.com/kfc/](https://survey.htunthihamyo.com/kfc/)
